@@ -7,7 +7,8 @@ Following is a quickstart guide to get you started with the Mc master of ceremon
 - [2.1 Clone the repository](#21-clone-the-repository)
 - [2.2 Install dependencies](#22-install-dependencies)
 - [3. Running the app](#3-running-the-app)
-- [4. TroubleShooting](#7-troubleshooting)
+- [4. Screenshots](#4-Screenshots)
+- [5. TroubleShooting](#5-troubleshooting)
 
 ## 1.Environment Setup
 
@@ -54,7 +55,13 @@ npx react-native run-ios
 
 The above command opens up a emulator via android studio, and ios simulator in macOS. if all goes well you will be able to see the app run. Cheers.
 
-### 4. TroubleShooting
+### 4. Screenshots
+
+![Home vertical](./screenshots/Home_vertical.png)
+![Home grid](./screenshots/Home_grid.png)
+![zoom modal](./screenshots/Zoom_Modal.png)
+
+### 5. TroubleShooting
 
 Run the following command to clean the build.
 
