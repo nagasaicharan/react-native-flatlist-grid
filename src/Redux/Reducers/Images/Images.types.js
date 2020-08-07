@@ -1,0 +1,4 @@
+export const types = {
+  ADD_IMAGES_DATA: 'ADD_IMAGES_DATA',
+  REMOVE_IMAGES_DATA: 'REMOVE_IMAGES_DATA',
+};
