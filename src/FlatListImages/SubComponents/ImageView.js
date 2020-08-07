@@ -1,15 +1,18 @@
 import React from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native';
-const ImageView = ({imageObj, isGridView}) => {
+import {Image, Text, StyleSheet, Pressable} from 'react-native';
+const ImageView = ({imageObj, isGridView, onPressItem = () => {}}) => {
   return (
-    <View
+    <Pressable
+      onPress={() => {
+        onPressItem();
+      }}
       style={[
         isGridView ? styles.gridViewStyle : null,
         styles.containerStyles,
       ]}>
       <Image style={styles.imageStyle} source={{uri: imageObj.url}}></Image>
       <Text style={styles.textStyle}>{imageObj.title}</Text>
-    </View>
+    </Pressable>
   );
 };
 const styles = StyleSheet.create({

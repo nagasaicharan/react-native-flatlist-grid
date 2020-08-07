@@ -14,6 +14,7 @@ const SwitchButton = ({data = [], selected, onChange = () => {}}) => {
                 marginLeft: 40,
                 fontSize: 16,
                 fontWeight: 'bold',
+                paddingVertical: 10,
               },
             ]}
             onPress={() => {

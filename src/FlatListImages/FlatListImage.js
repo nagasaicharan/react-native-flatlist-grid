@@ -1,13 +1,18 @@
 import React, {useEffect, useState, Fragment} from 'react';
-import {View, FlatList, Image, Text, ActivityIndicator} from 'react-native';
+import {View, FlatList, ActivityIndicator} from 'react-native';
 import {getImages} from '../Redux/Reducers/Images/Images.actions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import ImageView from './SubComponents/ImageView';
 import SwitchButton from './SubComponents/SwitchButton';
+import ImageModal from './SubComponents/ImageModal';
 const FlatListImage = ({getImages, imagesData}) => {
   const [loading, setLoading] = useState(false);
   const [isGridView, setIsGridView] = useState(false);
+  const [modalImageObj, setModalImageObj] = useState({
+    isVisible: false,
+    imageUrl: '',
+  });
   useEffect(() => {
     getImagesData();
   }, []);
@@ -20,7 +25,17 @@ const FlatListImage = ({getImages, imagesData}) => {
     }
   };
   const renderimageObj = (imageObj = {}) => {
-    return <ImageView imageObj={imageObj} isGridView={true}></ImageView>;
+    return (
+      <ImageView
+        imageObj={imageObj}
+        isGridView={true}
+        onPressItem={() => {
+          setModalImageObj({
+            isVisible: true,
+            imageUrl: imageObj.url,
+          });
+        }}></ImageView>
+    );
   };
   return (
     <View style={{flex: 1}}>
@@ -61,6 +76,13 @@ const FlatListImage = ({getImages, imagesData}) => {
           <ActivityIndicator size="large" />
         </View>
       )}
+      <ImageModal
+        isVisible={modalImageObj.isVisible}
+        imageUrl={modalImageObj.imageUrl}
+        closeModal={() => {
+          setModalImageObj({isVisible: false, imageUrl: ''});
+        }}
+      />
     </View>
   );
 };
