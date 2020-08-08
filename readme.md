@@ -1,6 +1,6 @@
 # Installation Guide
 
-Following is a quickstart guide to get you started with the Mc master of ceremony
+Following is a quickstart guide to get you started
 
 - [1. Environment Setup](#1environment-setup)
 - [2. Clone and Install](#2-clone-and-install)
